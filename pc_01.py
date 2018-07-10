@@ -5,12 +5,14 @@
 # @Software: PyCharm
 
 import requests
-# from bs4 import BeautifulSoup
-# def main():
-#     url = 'http://www.pythonchallenge.com/pc/def/map.html'
-#     soup = BeautifulSoup(url,'lxml')
-#     soup.
-#
-#
-# if __name__ == '__main__':
-#     main()
+from bs4 import BeautifulSoup
+def main():
+    url = 'http://www.pythonchallenge.com/pc/def/map.html'
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text,'lxml')
+    result = soup.findAll("br")
+    print(result)
+
+
+if __name__ == '__main__':
+    main()
