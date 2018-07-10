@@ -10,8 +10,8 @@ def main():
     url = 'http://www.pythonchallenge.com/pc/def/map.html'
     response = requests.get(url)
     soup = BeautifulSoup(response.text,'lxml')
-    result = soup.findAll("br")
-    print(result)
+    print(soup.findAll("br"))
+
 
 
 if __name__ == '__main__':
