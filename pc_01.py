@@ -4,13 +4,14 @@
 # @File    : pc_01.py
 # @Software: PyCharm
 
-import requests
+from urllib.request import urlopen
 from bs4 import BeautifulSoup
 def main():
     url = 'http://www.pythonchallenge.com/pc/def/map.html'
-    response = requests.get(url)
-    soup = BeautifulSoup(response.text,'lxml')
-    print(soup.findAll("br"))
+    response = urlopen(url)
+    soup = BeautifulSoup(response,'lxml')
+    result = soup.findAll("br")
+    print(result[0].get_text())
 
 
 
